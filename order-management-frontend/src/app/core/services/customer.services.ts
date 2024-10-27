@@ -17,7 +17,7 @@ export class CustomerService {
   }
 
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.apiUrl);
+    return this.http.get<Customer[]>(`${this.apiUrl}?isActive=true`);
   }
 
   getCustomerById(id: string): Observable<Customer> {

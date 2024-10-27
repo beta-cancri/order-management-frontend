@@ -17,7 +17,7 @@ export class OrderService {
   }
 
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.apiUrl);
+    return this.http.get<Order[]>(`${this.apiUrl}?isActive=true`);
   }
 
   getOrderById(id: string): Observable<Order> {

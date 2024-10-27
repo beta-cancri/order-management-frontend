@@ -14,17 +14,16 @@ export class ProductService {
     @Inject('APP_CONFIG') private config: any
   ) {
     this.apiUrl = `${config.apiUrl}/products`;
-    console.log('API URL:', this.apiUrl);  // Debugging output
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(`${this.apiUrl}?isActive=true`);
   }
 
   getProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
-  
+
   createProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product);
   }
