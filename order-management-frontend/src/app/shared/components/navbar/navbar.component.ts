@@ -1,4 +1,3 @@
-// navbar.component.ts
 import { Component, ViewChild } from '@angular/core';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 

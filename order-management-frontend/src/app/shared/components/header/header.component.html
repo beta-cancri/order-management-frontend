@@ -1,9 +1,7 @@
-<header>
-    <h1>Order Management System</h1>
-    <nav>
-      <a routerLink="/orders">Orders</a>
-      <a routerLink="/products">Products</a>
-      <a routerLink="/customers">Customers</a>
-    </nav>
-  </header>
-  
+<div class="modal-backdrop" *ngIf="isVisible">
+  <div class="modal-content">
+    <h2>Login</h2>
+    <!-- Add form elements for login here -->
+    <button (click)="close()">Close</button>
+  </div>
+</div>

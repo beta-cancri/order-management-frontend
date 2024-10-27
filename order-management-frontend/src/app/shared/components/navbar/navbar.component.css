@@ -1,25 +1,13 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-  }
-  
-  .navbar h1 {
-    font-size: 1.5rem;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px; /* Add padding to make it look like a button */
+  background-color: #555; /* Button background color */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+  background-color: #777; /* Darker color on hover */
+}

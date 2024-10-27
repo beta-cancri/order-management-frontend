@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common'; // Import NgIf here
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-modal',
-  templateUrl: './login-modal.component.html',
-  styleUrls: ['./login-modal.component.css'],
   standalone: true,
-  imports: [NgIf]  // Add NgIf to the imports array
+  imports: [CommonModule], // Import CommonModule to enable *ngIf
+  templateUrl: './login-modal.component.html',
+  styleUrls: ['./login-modal.component.css']
 })
 export class LoginModalComponent {
   isVisible = false;
