@@ -1,0 +1,22 @@
+.customer-list {
+    padding: 20px;
+  }
+  
+  .customer-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .customer-list li {
+    margin: 10px 0;
+  }
+  
+  .customer-list a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .customer-list a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,14 @@
+<div class="customer-list">
+    <h2>Customers</h2>
+    <div *ngIf="customers.length; else noCustomers">
+      <ul>
+        <li *ngFor="let customer of customers">
+          <a [routerLink]="['/customers', customer.id]">{{ customer.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <ng-template #noCustomers>
+      <p>No customers found.</p>
+    </ng-template>
+  </div>
+  

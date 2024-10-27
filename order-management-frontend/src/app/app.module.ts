@@ -9,13 +9,13 @@ import { appConfig } from './app.config';  // Import appConfig
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    HeaderComponent  // Remove AppComponent from declarations
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppComponent  // Import AppComponent here
   ],
   providers: [
     { provide: 'APP_CONFIG', useValue: appConfig }  // Provide appConfig at the root

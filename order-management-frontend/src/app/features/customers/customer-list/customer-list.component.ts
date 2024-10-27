@@ -1,18 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../../../core/services/order.services';
-import { Order } from '../../../core/models/order.model';
+import { CustomerService } from '../../../core/services/customer.services';
+import { Customer } from '../../../core/models/customer.model';
 
 @Component({
-  selector: 'app-order-list',
-  templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.css']
+  selector: 'app-customer-list',
+  templateUrl: './customer-list.component.html',
+  styleUrls: ['./customer-list.component.css']
 })
-export class OrderListComponent implements OnInit {
-  orders: Order[] = [];
+export class CustomerListComponent implements OnInit {
+  customers: Customer[] = [];
 
-  constructor(private orderService: OrderService) {}
+  constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe(data => this.orders = data);
+    this.fetchCustomers();
+  }
+
+  fetchCustomers(): void {
+    this.customerService.getCustomers().subscribe(
+      (data) => {
+        this.customers = data;
+      },
+      (error) => {
+        console.error('Error fetching customers', error);
+      }
+    );
   }
 }
