@@ -14,6 +14,7 @@ export class ProductService {
     @Inject('APP_CONFIG') private config: any
   ) {
     this.apiUrl = `${config.apiUrl}/products`;
+    console.log('API URL:', this.apiUrl);  // Debugging output
   }
 
   getProducts(): Observable<Product[]> {

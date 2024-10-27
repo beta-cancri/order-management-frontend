@@ -9,6 +9,6 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(APP_ROUTES),
     provideHttpClient(),
-    { provide: 'APP_CONFIG', useValue: appConfig }
+    { provide: 'APP_CONFIG', useValue: appConfig } // Directly inject appConfig
   ]
 }).catch((err) => console.error(err));
