@@ -1,0 +1,16 @@
+<div class="modal-backdrop" *ngIf="isVisible">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <form (ngSubmit)="close()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+  
+        <button type="submit">Login</button>
+        <button type="button" (click)="close()">Close</button>
+      </form>
+    </div>
+  </div>
+  
