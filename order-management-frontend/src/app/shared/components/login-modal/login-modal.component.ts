@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CustomerService } from '../../../core/services/customer.services'; // Correct path to CustomerService
+import { AuthService } from '../../../core/services/auth.services';
 import { Customer } from '../../../core/models/customer.model';
 
 @Component({
@@ -9,7 +10,7 @@ import { Customer } from '../../../core/models/customer.model';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login-modal.component.html',
-  styleUrls: ['./login-modal.component.css']
+  styleUrls: ['./login-modal.component.css'],
 })
 export class LoginModalComponent {
   isVisible = false;
@@ -18,7 +19,7 @@ export class LoginModalComponent {
   email = '';
   password = '';
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService, private authService: AuthService) {}
 
   open() {
     this.isVisible = true;
@@ -34,27 +35,34 @@ export class LoginModalComponent {
   }
 
   handleLogin() {
-    // Implement login logic here
-    this.close();
+    this.authService.login(this.email, this.password).subscribe(
+      () => {
+        alert('Login successful!');
+        this.close();
+      },
+      (error) => {
+        console.error('Login failed:', error);
+      }
+    );
   }
 
   handleRegister() {
     const newCustomer: Customer = {
-      id: '', // Set to '' or undefined; the backend will assign an ID
+      id: '',
       name: this.username,
       email: this.email,
-      address: '', // Add address if needed; leave blank if optional
+      address: '',
       password: this.password,
       isAdmin: false,
-      isActive: true
+      isActive: true,
     };
-    
+
     this.customerService.createCustomer(newCustomer).subscribe(
       () => {
         alert('Account created successfully!');
         this.close();
       },
-      (error: any) => { // Explicitly type error as `any`
+      (error) => {
         console.error('Error creating account:', error);
       }
     );
