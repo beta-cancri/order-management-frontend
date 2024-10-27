@@ -1,0 +1,10 @@
+<div *ngIf="product" class="product-details">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price | currency }}</p>
+    <!-- Add other details as needed -->
+  </div>
+  <div *ngIf="!product">
+    <p>Loading product details...</p>
+  </div>
+  
