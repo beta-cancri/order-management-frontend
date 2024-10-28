@@ -5,8 +5,8 @@ import { Product } from '../../../core/models/product.model';
 
 @Component({
   selector: 'app-product-details',
-  templateUrl: './product-detail.component.html', // Ensure this matches the actual file name
-  styleUrls: ['./product-detail.component.css']    // Ensure this matches the actual file name
+  templateUrl: './product-detail.component.html', 
+  styleUrls: ['./product-detail.component.css']   
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | null = null;

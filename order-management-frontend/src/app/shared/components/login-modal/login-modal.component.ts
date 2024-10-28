@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CustomerService } from '../../../core/services/customer.services'; // Correct path to CustomerService
+import { CustomerService } from '../../../core/services/customer.services'; 
 import { AuthService } from '../../../core/services/auth.services';
 import { Customer } from '../../../core/models/customer.model';
 
@@ -35,7 +35,6 @@ export class LoginModalComponent {
   }
 
   handleLogin() {
-    // Using email for login now
     this.authService.login(this.email, this.password).subscribe(
       () => {
         alert('Login successful!');

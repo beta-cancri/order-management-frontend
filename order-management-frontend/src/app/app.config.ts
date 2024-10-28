@@ -1,3 +1,3 @@
 export const appConfig = {
-  apiUrl: 'http://localhost:8080'  // Backend API URL
+  apiUrl: 'http://localhost:8080'
 };

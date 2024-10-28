@@ -3,6 +3,6 @@ export interface Product {
   name: string;
   price: number;
   description: string;
-  photo: string; // URL for the product photo
+  photo: string; 
   isActive: boolean;
 }

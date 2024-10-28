@@ -3,7 +3,7 @@ export interface Customer {
   name: string;
   email: string;
   address: string;
-  password?: string; // Optional for security, only used during registration
+  password?: string;
   isActive: boolean;
   isAdmin: boolean;
 }

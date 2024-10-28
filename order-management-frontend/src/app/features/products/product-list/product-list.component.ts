@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
   fetchProducts(): void {
     this.productService.getProducts().subscribe(
       (data) => {
-        console.log('Fetched products:', data);  // Log fetched data
+        console.log('Fetched products:', data);
         this.products = data;
       },
       (error) => {
