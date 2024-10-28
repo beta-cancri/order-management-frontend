@@ -1,9 +1,14 @@
 <nav class="navbar">
-  <h1>Order Management</h1>
-  <ul>
+  <div class="navbar-brand">
+    <h1>Order Management</h1>
+  </div>
+  <ul class="navbar-links">
     <li><a routerLink="/">Home</a></li>
     <li *ngIf="!isLoggedIn"><a (click)="openLoginModal()">Login</a></li>
-    <li *ngIf="isLoggedIn">{{ userName }} | <a (click)="logout()">Logout</a></li>
+    <li *ngIf="isLoggedIn">
+      <span class="username">{{ userName }}</span>
+      <a (click)="logout()" class="logout-link">Logout</a>
+    </li>
   </ul>
 </nav>
 <app-login-modal #loginModal></app-login-modal>

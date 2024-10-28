@@ -1,0 +1,34 @@
+/* Apply background image to the entire page */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :host {
+    display: block;
+    min-height: 100vh;
+    background-image: url('https://i.imgur.com/UKCvw0H.png'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Overlay effect */
+  .app-overlay {
+    background-color: rgba(128, 128, 128, 0.6); /* Gray overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  /* Main content styling */
+  .app-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    padding: 20px;
+  }
+  

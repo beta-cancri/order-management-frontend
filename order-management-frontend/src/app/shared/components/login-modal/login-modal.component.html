@@ -5,14 +5,14 @@
 
     <!-- Login Form -->
     <form *ngIf="showLogin" (ngSubmit)="handleLogin()">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required>
 
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" [(ngModel)]="password" required>
 
       <button type="submit">Login</button>
-      <button type="button" (click)="toggleView()">Create Account</button>
+      <button type="button" class="toggle-button" (click)="toggleView()">Create Account</button>
     </form>
 
     <!-- Create Account Form -->
@@ -27,9 +27,9 @@
       <input type="password" id="new-password" name="password" [(ngModel)]="password" required>
 
       <button type="submit">Create Account</button>
-      <button type="button" (click)="toggleView()">Back to Login</button>
+      <button type="button" class="toggle-button" (click)="toggleView()">Back to Login</button>
     </form>
 
-    <button type="button" (click)="close()">Close</button>
+    <button type="button" class="close-button" (click)="close()">Close</button>
   </div>
 </div>

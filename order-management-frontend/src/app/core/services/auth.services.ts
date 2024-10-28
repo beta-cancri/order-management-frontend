@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<Customer> {
-    return this.http.post<Customer>('/api/login', { email, password }).pipe(
+    return this.http.post<Customer>('http://localhost:8080/auth/login', { email, password }).pipe(
       tap((user: Customer) => this.currentUserSubject.next(user))
     );
   }

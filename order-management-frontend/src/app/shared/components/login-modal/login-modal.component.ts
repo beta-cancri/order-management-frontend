@@ -35,6 +35,7 @@ export class LoginModalComponent {
   }
 
   handleLogin() {
+    // Using email for login now
     this.authService.login(this.email, this.password).subscribe(
       () => {
         alert('Login successful!');
@@ -57,8 +58,9 @@ export class LoginModalComponent {
       isActive: true,
     };
 
-    this.customerService.createCustomer(newCustomer).subscribe(
+    this.customerService.createCustomer(newCustomer).subscribe(      
       () => {
+        console.log('Creating new customer:', newCustomer);
         alert('Account created successfully!');
         this.close();
       },

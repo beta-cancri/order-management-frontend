@@ -1,13 +1,13 @@
 <div class="product-list">
   <h2>Our Products</h2>
-  <div *ngIf="products.length; else noProducts">
-    <div *ngFor="let product of products" class="product-item">
-      <!-- Link to Product Details Page -->
+  <div *ngIf="products.length; else noProducts" class="products-grid">
+    <div *ngFor="let product of products" class="product-card">
       <a [routerLink]="['/products', product.id]" class="product-link">
-        <h3>{{ product.name }}</h3>
+        <h3 class="product-name">{{ product.name }}</h3>
       </a>
-      <p>{{ product.description }}</p>
-      <p>Price: {{ product.price | currency }}</p>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-price">Price: {{ product.price | currency }}</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
     </div>
   </div>
   <ng-template #noProducts>

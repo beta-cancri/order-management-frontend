@@ -1,13 +1,81 @@
-.navbar a {
+/* Basic Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #333; /* Dark background color for navbar */
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px; /* Add padding to make it look like a button */
-  background-color: #555; /* Button background color */
-  border-radius: 4px; /* Rounded corners */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-brand h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #f0f0f0;
+}
+
+/* Navbar Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  background-color: #555;
+}
+
+/* Hover and Active States */
 .navbar a:hover {
-  background-color: #777; /* Darker color on hover */
+  background-color: #777;
+}
+
+.logout-link {
+  color: #f05c5c; /* Distinct color for logout button */
+  background-color: transparent;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.logout-link:hover {
+  background-color: #c44c4c;
+}
+
+/* Username Style */
+.username {
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar-brand {
+    margin-bottom: 10px;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+    width: 100%;
+    justify-content: space-around;
+  }
 }
